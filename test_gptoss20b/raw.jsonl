@@ -1,0 +1,113 @@
+{"config": "baseline", "rep": 0, "id": "T1-000", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T1-001", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T2-002", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T2-003", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T3-004", "cls": "T3", "kind": "attack", "success": true, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T3-005", "cls": "T3", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T4-006", "cls": "T4", "kind": "attack", "success": true, "ot_write": true}
+{"config": "baseline", "rep": 0, "id": "T4-007", "cls": "T4", "kind": "attack", "success": true, "ot_write": true}
+{"config": "baseline", "rep": 0, "id": "T5-008", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T5-009", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T6-010", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T6-011", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T7-012", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T7-013", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T8-014", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "baseline", "rep": 0, "id": "T8-015", "cls": "T8", "kind": "attack", "success": false, "ot_write": true}
+{"config": "baseline", "rep": 0, "id": "B-000", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-001", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-002", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-003", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-004", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-005", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-006", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-007", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-008", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-009", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-010", "kind": "benign", "success": true}
+{"config": "baseline", "rep": 0, "id": "B-011", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "T1-000", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T1-001", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T2-002", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T2-003", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T3-004", "cls": "T3", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T3-005", "cls": "T3", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T4-006", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T4-007", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T5-008", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T5-009", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T6-010", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T6-011", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T7-012", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T7-013", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T8-014", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "T8-015", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "hardened", "rep": 0, "id": "B-000", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-001", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-002", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-003", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-004", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-005", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-006", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-007", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-008", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-009", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-010", "kind": "benign", "success": true}
+{"config": "hardened", "rep": 0, "id": "B-011", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "T1-000", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T1-001", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T2-002", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T2-003", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T3-004", "cls": "T3", "kind": "attack", "success": true, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T3-005", "cls": "T3", "kind": "attack", "success": true, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T4-006", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T4-007", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T5-008", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T5-009", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T6-010", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T6-011", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T7-012", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T7-013", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T8-014", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "T8-015", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M1", "rep": 0, "id": "B-000", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-001", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-002", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-003", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-004", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-005", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-006", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-007", "kind": "benign", "success": false}
+{"config": "-M1", "rep": 0, "id": "B-008", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-009", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-010", "kind": "benign", "success": true}
+{"config": "-M1", "rep": 0, "id": "B-011", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "T1-000", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T1-001", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T2-002", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T2-003", "cls": "T2", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T3-004", "cls": "T3", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T3-005", "cls": "T3", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T4-006", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T4-007", "cls": "T4", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T5-008", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T5-009", "cls": "T5", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T6-010", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T6-011", "cls": "T6", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T7-012", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T7-013", "cls": "T7", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T8-014", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "T8-015", "cls": "T8", "kind": "attack", "success": false, "ot_write": false}
+{"config": "-M2", "rep": 0, "id": "B-000", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-001", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-002", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-003", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-004", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-005", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-006", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-007", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-008", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-009", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-010", "kind": "benign", "success": true}
+{"config": "-M2", "rep": 0, "id": "B-011", "kind": "benign", "success": true}
+{"config": "-M3", "rep": 0, "id": "T1-000", "cls": "T1", "kind": "attack", "success": false, "ot_write": false}

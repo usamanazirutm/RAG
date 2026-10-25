@@ -1,0 +1,25 @@
+{
+  "provider": "openai",
+  "model": "qwen/qwen3.8-27b",
+  "base_url": "https://api.groq.com/openai/v1",
+  "temperature": 0.0,
+  "reps": 3,
+  "n_per_class": 6,
+  "retriever": "tfidf",
+  "configs": [
+    "baseline",
+    "hardened"
+  ],
+  "carrier_source": "deepset/prompt-injections",
+  "n_carriers": 111,
+  "mitigations": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7"
+  ],
+  "seed": 42
+}

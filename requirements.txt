@@ -1,0 +1,9 @@
+openai>=1.40
+datasets>=2.19
+scikit-learn>=1.3
+numpy>=1.24
+scipy>=1.10
+statsmodels>=0.14
+matplotlib>=3.7
+# optional, only for --retriever minilm:
+# sentence-transformers>=2.6

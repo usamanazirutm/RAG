@@ -1,0 +1,16 @@
+{
+  "overall_ASR_baseline_pct": 25.0,
+  "overall_ASR_hardened_pct": 0.0,
+  "OTwrite_baseline_pct": 20.5,
+  "OTwrite_hardened_pct": 2.3,
+  "benign_TSR_baseline_pct": 100.0,
+  "benign_TSR_hardened_pct": 100.0,
+  "mcnemar_baseline_vs_hardened": {
+    "fixed_by_hardening": 11,
+    "broken_by_hardening": 0,
+    "p_value": 0.0009765625
+  },
+  "n_attack_cases": 44,
+  "n_benign_tasks": 12,
+  "reps": 1
+}
