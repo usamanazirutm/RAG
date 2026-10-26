@@ -1,117 +1,77 @@
-# ICS-LLM-TM: experiment harness
+# ICS-LLM-TM
 
-Threat-modelling testbed for MCP- and RAG-integrated LLM applications in an
-industrial control environment. It simulates a textile dye-bath tank (T-101)
-behind an OPC UA-style gateway, a RAG corpus of plant documents, and MCP tool
-servers, then runs an attack suite (T1–T8) against a chosen LLM with and
-without seven mitigations (M1–M7). It writes the paper's result tables.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23652827.svg)](https://doi.org/10.5281/zenodo.23652827)
 
-This produces the numbers that replace every **[TBD]** in Tables 4 and 5 of the
-manuscript.
+Testbed, attack suite and results for **threat modelling of MCP- and
+RAG-integrated LLM applications in industrial environments** (manuscript
+submitted to *Scientific Reports*).
 
-## 1. Install
+The harness simulates a textile dye-bath tank (T-101) behind an OPC UA-style
+gateway, a RAG corpus of plant documents, and MCP-style tools passed to the
+model by native function calling. It runs 44 attack cases in eight classes
+(T1–T8) against an LLM with and without seven model-external mitigations
+(M1–M7), plus 12 benign operator tasks.
+
+## Headline results (396 attack runs, 3 open-weight models)
+
+| Model | Attack success, baseline → hardened | OT-write, baseline → hardened | Benign success |
+| --- | --- | --- | --- |
+| gpt-oss-20b | 22.7% → 0.0% | 22.0% → 0.8% | 100% |
+| gpt-oss-120b | 22.0% → 0.0% | 14.4% → 0.0% | 100% |
+| Qwen3.8-27b | 13.6% → 4.5% | 6.8% → 3.0% | 100% |
+
+Only two classes succeeded against these models: **retrieval poisoning (T3,
+96% pooled)** and **tool-description poisoning (T4, 67%)**. Direct and
+document-borne injections were refused by the system prompt alone.
+
+![Architecture](figures/Fig1_architecture.png)
+
+## Repository contents
+
+| Path | Purpose |
+| --- | --- |
+| `plant.py` | Simulated asset, safe envelope and OT gateway (zones Z6/Z7) |
+| `corpus.py` | Synthetic plant documents and TF-IDF retriever (Z4) |
+| `mcp_tools.py` | Tools, orchestrator loop and mitigations M1–M7 (Z2/Z5) |
+| `attacks.py` | Attack cases T1–T8 and benign tasks |
+| `payloads.py` | Loads injection phrasings from deepset/prompt-injections |
+| `models.py` | OpenAI-compatible API wrapper and a mock model for testing |
+| `run_experiment.py` | Runs configurations, resumes, writes tables and statistics |
+| `make_figures.py` | Result figures from a results folder |
+| `figures/` | Manuscript figures 1–4 |
+| `results/` | Raw logs and tables for every run reported in the paper |
+
+## Reproduce
 
 ```bash
-cd ics-llm-tm
-python3 -m venv .venv && source .venv/bin/activate     # optional
+python -m venv .venv
+.venv\Scripts\activate          # Windows  (Linux/macOS: source .venv/bin/activate)
 pip install -r requirements.txt
+
+# 1. Smoke test, no network or API key
+python run_experiment.py --provider mock --reps 3 --outdir results/mock
+
+# 2. A real model (any OpenAI-compatible endpoint; example: Groq)
+set OPENAI_API_KEY=gsk_...        # Linux/macOS: export OPENAI_API_KEY=...
+python run_experiment.py --provider openai --model openai/gpt-oss-20b \
+  --base-url https://api.groq.com/openai/v1 --max-tokens 2000 \
+  --configs baseline,hardened --reps 3 --outdir results/results_gptoss20b
 ```
 
-## 2. Smoke-test (no network, ~1 min)
+Runs save every conversation as they go; rerun the same command to resume
+after an interruption or a provider rate limit. `run_day.example.bat` shows
+the exact commands used for the paper.
 
-Validates the whole pipeline with a deterministic insecure mock agent:
+## Data
 
-```bash
-python run_experiment.py --provider mock --reps 20
-python make_figures.py
-```
+- Injection phrasings: [deepset/prompt-injections](https://huggingface.co/datasets/deepset/prompt-injections) (Apache-2.0), 111 English injections after filtering.
+- Plant documents, asset and attack goals: synthetic, created for this study.
+- No proprietary or real industrial data are used. Nothing here connects to a real control system.
 
-Expect baseline ASR ~100%, hardened much lower, benign TSR ~100%. These mock
-numbers are **not** results — they only prove the harness works.
+## Citation
 
-## 3. Real run (this is what goes in the paper)
+See `CITATION.cff`, or cite the archived release: https://doi.org/10.5281/zenodo.23652827
 
-Set an API key, then pick a model. Any OpenAI-compatible endpoint works.
+## Licence
 
-```bash
-# OpenAI
-export OPENAI_API_KEY=sk-...
-python run_experiment.py --provider openai --model gpt-4o-mini --reps 10
-
-# Groq (Llama 3.1, OpenAI-compatible)
-export OPENAI_API_KEY=gsk_...
-python run_experiment.py --provider openai --model llama-3.1-8b-instant \
-       --base-url https://api.groq.com/openai/v1 --reps 10
-
-# Local Ollama or vLLM (no key cost)
-export OPENAI_API_KEY=ollama
-python run_experiment.py --provider openai --model llama3.1:8b \
-       --base-url http://localhost:11434/v1 --reps 10
-
-# Azure OpenAI: set --base-url to <your-endpoint>/openai/deployments/<deployment>/ ... /v1
-```
-
-Run **three** backbone models (e.g. one local open-weight + two API models) so
-the paper can report per-model results. Use the same `--reps` for all.
-Recommended: `--reps 20` for tight confidence intervals.
-
-### Injection carriers (public data)
-
-By default the harness pulls real injection phrasings from the Hugging Face
-dataset **deepset/prompt-injections** (Apache-2.0) and attaches industrial
-attacker goals to them. If that download is blocked, it falls back to a small
-built-in list (recorded in `results/run_meta.json` as `carrier_source`). You
-can also supply your own public CSV:
-
-```bash
-python run_experiment.py --provider openai --model gpt-4o-mini \
-       --carriers-csv my_injections.csv        # columns: text[,label]
-```
-
-Always check `results/run_meta.json` → `carrier_source` says
-`deepset/prompt-injections` (or your CSV), **not** `fallback`, before using the
-numbers in the paper.
-
-## 4. Outputs (in `results/`)
-
-| File | Contents |
-| --- | --- |
-| `table4.csv` | ASR + OT-write by attack class, baseline vs hardened, with Wilson 95% CIs → paper Table 4 |
-| `table5.csv` | Leave-one-out mitigation ablation (overall ASR, OT-write, benign TSR) → paper Table 5 |
-| `summary.json` | Headline numbers + McNemar paired test (baseline vs hardened) |
-| `raw.jsonl` | One line per run (config, rep, case id, success, ot_write) — full reproducibility |
-| `run_meta.json` | Provider, model, reps, retriever, dataset source, seed |
-| `carriers_used.txt` | The exact injection carriers used |
-| `fig_asr_by_class.png`, `fig_ablation.png` | Figures |
-
-## 5. What to send back
-
-Zip the whole `results/` folder for **each** model you ran and share it. From
-those I will:
-- fill Tables 4 and 5 with real values and CIs,
-- write the per-model supplementary tables,
-- update the abstract/results prose and the figures,
-- replace every [TBD] in the manuscript.
-
-Tell me, for each run: the exact model name/version, provider, date, number of
-reps, and the `carrier_source` line.
-
-## 6. Mapping to the paper
-
-| Code | Paper |
-| --- | --- |
-| `plant.py` | Zones Z6/Z7, safety envelope (Methods: Testbed) |
-| `corpus.py` | Zone Z4 RAG pipeline |
-| `mcp_tools.py` | Zone Z5 tools + Orchestrator (Z2) + mitigations M1–M7 |
-| `attacks.py` | Attack suite T1–T8 + benign tasks |
-| `payloads.py` | Public injection carriers |
-| `models.py` | Backbone LLM wrappers |
-| `run_experiment.py` | Configs, reps, metrics, Wilson + McNemar |
-
-## 7. Notes / honesty
-
-- The asset is **simulated**; results are a lower bound on real-plant risk
-  (stated as a limitation in the manuscript).
-- `--retriever minilm` uses MiniLM embeddings (needs `sentence-transformers`);
-  default `tfidf` needs no extra download. Report which you used.
-- Nothing here touches a real control system. Keep it that way.
+MIT — see `LICENSE`.

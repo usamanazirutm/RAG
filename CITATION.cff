@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "ICS-LLM-TM: threat-modelling testbed for MCP- and RAG-integrated LLM applications in industrial environments"
+type: software
+authors:
+  - family-names: Nazir
+    given-names: Muhammad Huzaifa
+    affiliation: "University of Engineering and Technology, Lahore"
+  - family-names: Saleem
+    given-names: Yasir
+    affiliation: "University of Engineering and Technology, Lahore"
+  - family-names: Jafri
+    given-names: Fareed
+    affiliation: "University of Engineering and Technology, Lahore"
+version: 1.0.0
+doi: 10.5281/zenodo.23652827
+date-released: 2026-10-26
+license: MIT
+repository-code: "https://github.com/usamanazirutm/RAG"
+keywords:
+  - large language models
+  - prompt injection
+  - retrieval-augmented generation
+  - model context protocol
+  - industrial control systems
+  - threat modelling
